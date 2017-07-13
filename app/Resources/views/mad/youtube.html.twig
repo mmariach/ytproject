@@ -1,0 +1,38 @@
+{# app/Resources/views/mad/youtube.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Youtube Channel Search{% endblock %}
+
+{% block body %}
+<div align="center">
+<h3>Youtube Channel Videos</h3>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+{% if search_result_count == 0 %}
+    <div align="center"><h3>Sorry no Videos found.</h3></div>
+{% elseif search_result_count > 0 %}
+    <table border="0" cellpadding="0" cellspacing="25">
+        {% set k=0 %}
+        {% for i in 0..( (max_results/4 )-1) %}
+            <tr>
+            {% for j in 0..3 if k < search_result_count %}
+                    <td valign="top" style="width: 240px">
+                        <b><h4>{{ youtube_titles[k] }}</h4> </b>
+                        {#
+                        <img src="{{ youtube_thumbnails[k] }}" width="240" height="180">
+                        #}
+                        <iframe width="240" height="180" src={{ youtube_video_urls[k] }} \>
+                        </iframe>
+                      {{  youtube_descriptions[k] }}
+                    </td>
+                {% set k=k+1 %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endif %}
+</div>
+{% endblock %}
