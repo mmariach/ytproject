@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 class YoutubeController extends Controller
 {
 
-public $apiKey = "AIzaSyAYi9lztCNu729UKlVn6PX395fTPqGM0pM"; //Insert your individual Google API-Key
+public $apiKey = ""; //Insert your individual Google API-Key
 public $maxResults = 8; //Can be changed...
 
     /**
