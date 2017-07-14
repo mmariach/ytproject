@@ -22,6 +22,14 @@ public $maxResults = 8; //Can be changed...
      * @return Google_Client
      */
     public function getClient() {
+        /**
+         * Library Requirements
+         *
+         * 1. Install composer (https://getcomposer.org)
+         * 2. On the command line, change to this directory (ytproject)
+         * 3. Require the google/apiclient library
+         *    $ composer require google/apiclient:~2.0
+         */        
         //Check for an existing API-Key
         if (empty($this->apiKey)) {
             $gapi ="https://developers.google.com/maps/documentation/javascript/get-api-key?hl=de";
