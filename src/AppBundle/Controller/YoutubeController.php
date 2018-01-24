@@ -26,7 +26,7 @@ use Symfony\Component\HttpFoundation\Response;
 class YoutubeController extends Controller
 {
 
-public $apiKey = ""; //Insert your individual Google API-Key
+public $apiKey = "AIzaSyBomlkhgsA7ghDyRa5oUiw7mOdc6Vra6-8"; //Insert your individual Google API-Key
 public $maxResults = 8; //Maximum Videos to search
 
     /**
